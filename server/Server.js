@@ -1,5 +1,4 @@
-// server.js
-// Import required modules
+
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -8,18 +7,15 @@ import User from "./contactModel.js";
 
 configDotenv();
 
-// Initialize express app and define port
 const app = express();
 const PORT = 9002;
 
-// Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/database-mgmt").then(() => {
   console.log('Connected to MongoDB');
 }).catch((err) => {
   console.error('Error connecting to MongoDB:', err.message);
 });
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
